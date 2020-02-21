@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set and Get Value Javascript</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- load jquery and bootstrap js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+      count = () =>{
+
+      // mengambil nilai dari elemen (get value)
+        let Nominal = Number(document.getElementById('nominal').value);
+        let Periode = Number(document.getElementById('periode').value);
+        let Bunga = Number(document.getElementById('bunga').value);
+
+
+        let cicilan = (Nominal + (Bunga*Nominal/100)) / Periode ;
+
+        document.getElementById('hasil').value = cicilan;
+        // menentukan nilai pada elemen (set value)
+
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card col-sm-6">
+        <div class="card-header bg-info">
+          <h4>Cicilan</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3 mt-2">
+              Nominal
+            </div>
+            <div class="col-8 mt-2">
+              <input type="number" id="nominal" class="form-control">
+            </div>
+            <div class="col-3 mt-2s">
+              Bunga
+            </div>
+            <div class="col-8 mt-2">
+              <input type="number" id="bunga" class="form-control">
+            </div>
+            <div class="col-3 mt-2">
+              Periode
+            </div>
+            <div class="col-8 mt-2">
+              <select id="periode">
+                <option value="">Periode</option>
+                <option value="6">6 Bulan</option>
+                <option value="12">12 Bulan</option>
+                <option value="24">24 Bulan</option>
+                <option value="36">36 Bulan</option>
+              </select>
+            </div>
+            <div class="col-3 mt-2">
+
+            </div>
+            <div class="col-8 mt-2">
+              <button type="button" class="btn btn-info"
+              onclick="count()">
+                Hitung
+                </button>
+            </div>
+            <div class="col-3 mt-2">
+              Hasil
+            </div>
+            <div class="col-8 mt-2">
+              <input type="text" id="hasil" class="form-control" readonly>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

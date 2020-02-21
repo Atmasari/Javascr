@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set and Get Value Javascript</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- load jquery and bootstrap js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+      count = () =>{
+
+      // mengambil nilai dari elemen (get value)
+        let Tinggi = document.getElementById('tinggi').value;
+        let Berat = document.getElementById('berat').value;
+        let Hasil = Berat / (Tinggi*Tinggi);
+
+       if(Hasil < 18.5){
+           document.getElementById('hasil').value = "Anda Kurus, Ayo makan ";
+       }
+       else if(Hasil >= 18.5 && Hasil< 22.9){
+           document.getElementById('hasil').value = "Anda Sedang, Jgn diet";
+       }
+       else if(Hasil >= 22.9 && Hasil < 24.9) {
+           document.getElementById('hasil').value = "Anda Gemuk, Diet y";
+       }
+
+       else if(Hasil >= 25){
+           document.getElementById('hasil').value = "Kamulo Obesitas, Kurangin maem karbo!!";
+      }
+
+        // menentukan nilai pada elemen (set value)
+
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card col-sm-6">
+        <div class="card-header bg-info">
+          <h4>Body Mass Index</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3 mt-2">
+              Tinggi
+            </div>
+            <div class="col-8 mt-2">
+              <input type="number" id="tinggi" class="form-control">
+              <br>
+            </div>
+            <div class="col-3">
+              Berat
+            </div>
+            <div class="col-8">
+              <input type="number" id="berat" class="form-control">
+            </div>
+            <div class="col-3">
+
+            </div>
+            <div class="col-8 mt-2">
+              <button type="button" class="btn btn-info"
+              onclick="count()">
+                Hitung
+                </button>
+            </div>
+            <div class="col-3 mt-2">
+              Hasil
+            </div>
+            <div class="col-8 mt-2">
+              <div class="bg-warning">
+                <input type="text" id="hasil" class="form-control" readonly>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
